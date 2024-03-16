@@ -1,2 +1,2 @@
 # javascript-exercises
-for me
+These exercises are only for personal skill improvement.
