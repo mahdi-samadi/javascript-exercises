@@ -12,7 +12,7 @@
 //   e.preventDefault();
 //   modal.classList.remove('hidden');
 //   overlay.classList.remove('hidden');
-// }; 
+// };
 
 // const closeModal = function () {
 //   modal.classList.add('hidden');
@@ -68,14 +68,47 @@
 // console.log(logo.designer);
 // console.log(logo.getAttribute('designer'));
 
+// const btnScrollTo = document.querySelector('.btn--scroll-to');
+// const section1 = document.querySelector('#section--1')
+// btnScrollTo.addEventListener('click', function(e) {
+//   const s1coords = section1.getBoundingClientRect();
+//   console.log(s1coords);
+//   console.log(e.target.getBoundingClientRect());
+//   console.log('Current scroll (X/Y)', window.pageXOffset, pageYOffset); // meqdare scorll dar safhe ba khude mouse 100 ta 100 ta Y
+//   console.log('height / width viewport', document.documentElement.clientHeight, document.documentElement.clientWidth); //  meqdare mokhtasate safhe width sabet height moteqayer ba baz o baste panjare inspect
+//   section1.scrollIntoView({behavior: 'smooth'});
+// })
 
-const btnScrollTo = document.querySelector('.btn--scroll-to');
-const section1 = document.querySelector('#section--1')
-btnScrollTo.addEventListener('click', function(e) {
-  const s1coords = section1.getBoundingClientRect();
-  console.log(s1coords);
-  console.log(e.target.getBoundingClientRect());
-  console.log('Current scroll (X/Y)', window.pageXOffset, pageYOffset); // meqdare scorll dar safhe ba khude mouse 100 ta 100 ta Y
-  console.log('height / width viewport', document.documentElement.clientHeight, document.documentElement.clientWidth); //  meqdare mokhtasate safhe width sabet height moteqayer ba baz o baste panjare inspect
-  section1.scrollIntoView({behavior: 'smooth'});
-})
+// const h1 = document.querySelector('h1');
+
+// const alertH1 = function () {
+//   alert('addEventListener: Great! you are reading the heading :D');
+// }
+// h1.addEventListener('mouseenter', function(e) {
+//   alert('addEventListener: Great! you are reading the heading :D');
+// })
+// h1.addEventListener('mouseenter', alertH1);
+
+// setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 5000);
+// h1.onmouseenter = function() {
+//   alert('onmouseenter: Great! you are reading the heading :D');
+// }
+
+// console.log(Math.floor(Math.random() * 256));
+
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+const randomColor = () =>
+  `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)} , ${randomInt(0, 255)})`;
+console.log(randomColor());
+
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+});
+document.querySelector('.nav').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+});
+
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+});
